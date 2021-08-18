@@ -63,6 +63,7 @@ function createRandomCircle() {
     const y = getRandomNumber(0, height - size);
 
     circle.classList.add('circle');
+    circle.style.background = generateRandomeColor();
     circle.style.width = `${size}px`;
     circle.style.height = `${size}px`;
     circle.style.top = `${y}px`;
@@ -74,4 +75,10 @@ function createRandomCircle() {
 
 function getRandomNumber(min, max) {
      return Math.round(Math.random() * (max - min) + min);
+}
+
+function generateRandomeColor() {
+    // let randomColor = '#' + (Math.random().toString(16) + '000000').substring(2,8).toUpperCase()
+    let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
 }
